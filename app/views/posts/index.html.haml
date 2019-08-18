@@ -1,0 +1,4 @@
+%div
+  - @posts.each do |post|
+    = simple_format(post.title)
+    = simple_format(post.body)
