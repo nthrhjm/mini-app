@@ -4,8 +4,10 @@
       .card-content.gray-text
         %span.card-title<
           = post.title
-        %p<
-          = post.body
+        %div
+          = simple_format(post.body)
+        %span.sender-name
+          = post.user_id
       .btns
         .card-action
           %a{href: "#"}<
