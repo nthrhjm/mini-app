@@ -1,8 +1,19 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.wrapper {
+  min-width: 960px;
+}
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
 .body{
   height: calc(100vh - 64px);
+  width: 85vw;
+  margin:0 auto;
+  padding-top: 64px;
 }
 .btns {
   display: flex;
