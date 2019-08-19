@@ -1,0 +1,35 @@
+.wrapper
+  = render partial: "header"
+
+  .body
+    .row
+      .col.s12.m6
+        = form_tag('/posts', method: :post) do
+          %h3<
+            投稿する
+          %input#name.validate{placeholder: "Title", type: "text", name: "title"}
+          %input#name.validate{placeholder: "name", type: "string", name: "name"}
+          -# %label{for:"name"}<
+            Name
+          %textarea#body.validate{cols: "30", name: "body", placeholder: "text", rows: "10"}
+          -# %label{for:"body"}<
+            text
+          %input.validate{type: "submit", value: "SENT"}
+
+          -# .card-content.gray-text
+          -#   %span.card-title<
+          -#     -# = post.title
+          -#   %div
+          -#     -# = simple_format(post.body)
+          -#   %span.sender-name
+          -#     -# = post.user_id
+          -# .btns
+          -#   .card-action
+          -#     %a{href: "#"}<
+          -#       詳細
+          -#   .card-action
+          -#     %a{href: "#"}<
+          -#       編集
+          -#   .card-action
+          -#     %a{href: "#"}<
+          -#       削除

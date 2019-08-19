@@ -1,20 +1,6 @@
 .wrapper
-  .header
-    %nav
-      .nav-wrapper.yellow.darken-4
-        %a.brand-logo{href: "#"}<
-          Blog
-        %ul.right.hide-on-med-and-down#nav-mobile
-          %li<
-            %a{href: "Sign In"}<
-              Sign In
-          %li<
-            %a{href: "Sign Out"}<
-              Sign Out
-          %li<
-            %a{href: "New"}<
-              New Post
-
+  = render partial: "header"
+  
   .body.yellow.transparent
     - @posts.each do |post|
       = render partial: "post", locals: { post: post}
