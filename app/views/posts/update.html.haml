@@ -11,11 +11,9 @@
   .body.yellow.transparent
     .row
       .col.s12.m6
-        = form_for @post do |f|
-          .card.blue-.yellow.lighten-5
-            .card-content.gray-text
-              %h3<
-                投稿する
-              = f.text_field :title, placeholder: "Title"
-              = f.text_area :body, placeholder: 'text'
-              = f.submit "SENT"
+        .card.yellow.lighten-5
+          .card-content.gray-text
+            %h3
+              更新が完了しました
+            %a.btns{href: "/"}
+              投稿一覧へ戻る

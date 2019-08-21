@@ -1,15 +1,18 @@
 .header
   %nav
     .nav-wrapper.yellow.darken-4
-      %a.brand-logo{href: "#"}<
+      %a.brand-logo{href: root_path}<
         Blog
       %ul.right.hide-on-med-and-down#nav-mobile
-        %li<
-          %a{href: "Sign In"}<
-            Sign In
-        %li<
-          %a{href: "Sign Out"}<
-            Sign Out
-        %li<
-          %a{href: "posts/new"}<
-            New Post
+        - if user_signed_in?
+          -# %li<
+          -#   = link_to "My Page", "/users/#{current_user.id}"
+          %li<
+            = link_to "New Post", "posts/new"
+          %li<
+            = link_to "Sign Out", "users/sign_out", method: :delete
+        - else
+          %li<
+            = link_to "Sign In", "users/sign_in", method: :get
+          %li<
+            = link_to "Sign Up", "users/sign_up", method: :get

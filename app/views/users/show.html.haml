@@ -1,0 +1,8 @@
+.wrapper
+  = render partial: "./posts/header"
+  .body.yellow.transparent
+    .card-content.gray-text
+      = @nickname
+      さんの投稿一覧
+    - @posts.each do |post|
+      = render partial: "./posts/post", locals: { post: post}

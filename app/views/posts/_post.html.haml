@@ -1,20 +1,21 @@
 .row
   .col.s12.m6
-    .card.blue-.yellow.lighten-5
+    .card.yellow.lighten-5
       .card-content.gray-text
         %span.card-title<
           = post.title
         %div
           = simple_format(post.body)
         %span.sender-name
-          = post.user_id
-      .btns
-        .card-action
-          %a{href: "#"}<
-            詳細
-        .card-action
-          %a{href: "#"}<
-            編集
-        .card-action
-          %a{href: "#"}<
-            削除
+          %span<
+            投稿者
+          #{post.user.nickname}
+        .btns
+          -# .card-action
+          -#   %a{href: "#"}<
+          -#     詳細
+          - if user_signed_in? && current_user.id == post.user_id
+            .card-action
+              = link_to '編集', "/posts/#{post.id}/edit", method: :get
+            .card-action
+              = link_to '削除', "/posts/#{post.id}", method: :delete

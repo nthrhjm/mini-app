@@ -1,0 +1,21 @@
+.wrapper
+  .header
+    %nav
+      .nav-wrapper.yellow.darken-4
+        %a.brand-logo{href: root_path}<
+          Blog
+        -# %ul.right.hide-on-med-and-down#nav-mobile
+        -#   - if user_signed_in?
+        -#     %li<
+        -#       = link_to "Go Top", root_path
+  .body.yellow.transparent
+    .row
+      .col.s12.m6
+        = form_for@post do |f|
+          .card.yellow.lighten-5
+            .card-content.gray-text
+              %h3<
+                編集する
+              = f.text_field :title, placeholder: "title"
+              = f.text_area :body, placeholder: "text"
+              = f.submit "SENT"

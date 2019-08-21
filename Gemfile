@@ -66,3 +66,4 @@ gem 'haml-rails'
 #Use Materialize.css
 gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons'
+gem 'devise'
