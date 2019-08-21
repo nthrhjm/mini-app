@@ -5,8 +5,8 @@
         Blog
       %ul.right.hide-on-med-and-down#nav-mobile
         - if user_signed_in?
-          -# %li<
-          -#   = link_to "My Page", "/users/#{current_user.id}"
+          %li<
+            = link_to "My Page", "/users/#{current_user.id}"
           %li<
             = link_to "New Post", "posts/new"
           %li<
