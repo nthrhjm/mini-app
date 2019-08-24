@@ -1,6 +1,6 @@
 .header
   %nav
-    .nav-wrapper.yellow.darken-4
+    .nav-wrapper.teal.accent-3
       %a.brand-logo{href: root_path}<
         Blog
       %ul.right.hide-on-med-and-down#nav-mobile
@@ -16,15 +16,3 @@
             = link_to "Sign In", new_user_session_path, method: :get
           %li<
             = link_to "Sign Up", new_user_registration_path, method: :get
-        -#   %li<
-        -#     = link_to "My Page", "/users/#{current_user.id}"
-        -#   %li<
-        -#     = link_to "New Post", "posts/new"
-        -#   %li<
-        -#     = link_to "Sign Out", "users/sign_out", method: :delete
-        -# - else
-        -#   %li<
-        -#     = link_to "Sign In", "users/sign_in", method: :get
-        -#   %li<
-        -#     = link_to "Sign Up", "users/sign_up", method: :get
-        -# - if user_signed_in?

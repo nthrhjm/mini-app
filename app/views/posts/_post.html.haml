@@ -1,6 +1,6 @@
 .row
   .col.s12.m6
-    .card.yellow.lighten-5
+    .card.teal.lighten-5.lighten-5
       .card-content.gray-text
         %span.card-title<
           = post.title
@@ -11,9 +11,6 @@
             投稿者
           #{post.user.nickname}
         .btns
-          -# .card-action
-          -#   %a{href: "#"}<
-          -#     詳細
           - if user_signed_in? && current_user.id == post.user_id
             .card-action
               = link_to '編集', "/posts/#{post.id}/edit", method: :get

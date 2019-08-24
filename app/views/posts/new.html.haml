@@ -1,21 +1,15 @@
 .wrapper
   .header
-    %nav
-      .nav-wrapper.yellow.darken-4
-        %a.brand-logo{href: root_path}<
-          Blog
-        %ul.right.hide-on-med-and-down#nav-mobile
-          - if user_signed_in?
-            %li<
-              = link_to "Go Top", root_path
-  .body.yellow.transparent
+    = render partial: "header"
+  .body.accent-2.transparent
     .row
       .col.s12.m6
         = form_for @post do |f|
-          .card.yellow.lighten-5
+          .card.teal.lighten-5.lighten-5
             .card-content.gray-text
               %h3<
                 新規投稿
               = f.text_field :title, placeholder: "Title"
               = f.text_area :body, placeholder: 'text'
-              = f.submit "SENT"
+              %a.waves-effect.waves-light.btn.red.lighten-2
+                = f.submit "SENT"
